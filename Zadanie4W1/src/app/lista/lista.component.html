@@ -1,5 +1,7 @@
 <div>
-    <a routerLink="form">Dodaj</a>
+<a routerLink="form">Dodaj</a><br>
+<input [(ngModel)]="fraza" (ngModelChange)="filtruj()" placeholder="Szukaj po tytule" />
+<button type="button" (click)="filtruj()">Szukaj</button>
 </div>
 <hr />
 <table border="1">
@@ -14,7 +16,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let obiekt of (dane$ | async)">
+        <tr *ngFor="let obiekt of dane">
             <td>{{obiekt.id}}</td>
             <td>{{obiekt.tytul}}</td>
             <td>{{obiekt.autor}}</td>
